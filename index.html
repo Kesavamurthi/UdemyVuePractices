@@ -23,14 +23,14 @@
       <p>Result: {{ counter }}</p>
       <input
         type="text"
-        v-on:input="setName"
-        v-on:keyup.enter="setConfirmedName"
+        v-model="name"
       />
-      <p>Your name: {{ confirmedName }}</p>
-      <form v-on:submit.prevent="submitForm">
+      <p>Your name: {{ name }}</p>
+      <button v-on:click="resetInput">Reset</button>
+      <!-- <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <button>sign up</button>
-      </form>
+      </form> -->
     </section>
   </body>
 </html>
