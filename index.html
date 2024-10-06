@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -18,9 +18,19 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button>Add</button>
-      <button>Remove</button>
+      <button v-on:click="add()">Add</button>
+      <button v-on:click="removethis()">Remove</button>
       <p>Result: {{ counter }}</p>
+      <input
+        type="text"
+        v-on:input="setName"
+        v-on:keyup.enter="setConfirmedName"
+      />
+      <p>Your name: {{ confirmedName }}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>sign up</button>
+      </form>
     </section>
   </body>
 </html>
